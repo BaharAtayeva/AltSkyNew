@@ -1,0 +1,139 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import pInterior1 from "@/assets/portfolio-interior-1.jpg";
+import pInterior2 from "@/assets/portfolio-interior-2.jpg";
+import pInterior3 from "@/assets/portfolio-interior-3.jpg";
+import pResidential1 from "@/assets/portfolio-residential-1.jpg";
+import pResidential2 from "@/assets/portfolio-residential-2.jpg";
+import pCommercial1 from "@/assets/portfolio-commercial-1.jpg";
+import pCommercial2 from "@/assets/portfolio-commercial-2.jpg";
+import pCad1 from "@/assets/portfolio-cad-1.jpg";
+import pCad2 from "@/assets/portfolio-cad-2.jpg";
+import pBim1 from "@/assets/portfolio-bim-1.jpg";
+import pMaster1 from "@/assets/portfolio-masterplan-1.jpg";
+import pPermitCover from "@/assets/portfolio-permit-cover.jpg";
+import pPermitSiteplan from "@/assets/portfolio-permit-siteplan.jpg";
+import pPermitLevel1 from "@/assets/portfolio-permit-level1.jpg";
+import pPermitLevel2 from "@/assets/portfolio-permit-level2.jpg";
+import pPermitElevEW from "@/assets/portfolio-permit-elevation-ew.jpg";
+import pPermitElevNS from "@/assets/portfolio-permit-elevation-ns.jpg";
+
+export const Route = createFileRoute("/portfolio")({
+  head: () => ({
+    meta: [
+      { title: "Portfolio — Architectural CAD, BIM & 3D Renderings | AltSky Design" },
+      { name: "description", content: "Selected residential, commercial, interior, masterplan, CAD/BIM and 3D rendering work by AltSky Design." },
+      { property: "og:title", content: "Portfolio — AltSky Design" },
+      { property: "og:description", content: "Selected projects across residential, commercial, interior, masterplan, CAD/BIM and 3D rendering." },
+      { property: "og:image", content: pResidential1 },
+    ],
+  }),
+  component: PortfolioPage,
+});
+
+type Cat = "All" | "Residential" | "Commercial" | "Interior Design" | "Masterplans" | "CAD/BIM" | "3D Rendering" | "Permit Drawings";
+
+const ITEMS: { src: string; title: string; cat: Exclude<Cat, "All">; loc: string }[] = [
+  { src: pResidential1, title: "Lakeside Modern Residence", cat: "Residential", loc: "Austin, TX" },
+  { src: pInterior1, title: "Open-Plan Living Visualization", cat: "Interior Design", loc: "Houston, TX" },
+  { src: pCommercial1, title: "Corporate Office Block", cat: "Commercial", loc: "Dallas, TX" },
+  { src: pCad1, title: "Residential Floor Plan Set", cat: "CAD/BIM", loc: "Seattle, WA" },
+  { src: pInterior2, title: "Wood & Marble Kitchen", cat: "Interior Design", loc: "San Antonio, TX" },
+  { src: pBim1, title: "Multi-Story BIM Model", cat: "CAD/BIM", loc: "Tacoma, WA" },
+  { src: pResidential2, title: "Stone & Cedar Family Home", cat: "Residential", loc: "Fort Worth, TX" },
+  { src: pInterior3, title: "Quiet Master Bedroom Render", cat: "3D Rendering", loc: "Austin, TX" },
+  { src: pCommercial2, title: "Hospitality Interior Render", cat: "Commercial", loc: "Houston, TX" },
+  { src: pMaster1, title: "Suburban Masterplan Study", cat: "Masterplans", loc: "Bellevue, WA" },
+  { src: pCad2, title: "Building Section Drawing", cat: "CAD/BIM", loc: "Plano, TX" },
+  // Permit Drawings — Seattle Residential Addition
+  { src: pPermitCover, title: "Seattle Residential Addition — Cover", cat: "Permit Drawings", loc: "Seattle, WA" },
+  { src: pPermitSiteplan, title: "Seattle Residential Addition — Site Plan", cat: "Permit Drawings", loc: "Seattle, WA" },
+  { src: pPermitLevel1, title: "Seattle Residential Addition — Proposed Level 1", cat: "Permit Drawings", loc: "Seattle, WA" },
+  { src: pPermitLevel2, title: "Seattle Residential Addition — Proposed Level 2", cat: "Permit Drawings", loc: "Seattle, WA" },
+  { src: pPermitElevEW, title: "Seattle Residential Addition — East/West Elevations", cat: "Permit Drawings", loc: "Seattle, WA" },
+  { src: pPermitElevNS, title: "Seattle Residential Addition — North/South Elevations", cat: "Permit Drawings", loc: "Seattle, WA" },
+];
+
+const CATS: Cat[] = ["All", "Residential", "Commercial", "Interior Design", "Masterplans", "CAD/BIM", "3D Rendering", "Permit Drawings"];
+
+function PortfolioPage() {
+  const [active, setActive] = useState<Cat>("All");
+  const filtered = active === "All" ? ITEMS : ITEMS.filter((i) => i.cat === active);
+
+  return (
+    <div className="min-h-screen bg-background">
+      <SiteHeader />
+
+      <section className="container-studio pt-16 pb-12 md:pt-24 md:pb-16">
+        <p className="eyebrow">Portfolio</p>
+        <h1 className="mt-5 max-w-4xl font-display text-5xl leading-[1.05] text-balance text-primary md:text-7xl">
+          Work shaped by<br />precision and <em className="font-light italic text-accent">restraint.</em>
+        </h1>
+        <p className="mt-7 max-w-2xl text-muted-foreground md:text-lg">
+          A selection of recent drafting, modeling and visualization work across
+          residential, commercial and masterplan scales.
+        </p>
+      </section>
+
+      <section className="container-studio">
+        <div className="flex flex-wrap gap-2 border-y border-border py-5">
+          {CATS.map((c) => (
+            <button
+              key={c}
+              onClick={() => setActive(c)}
+              className={`px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] transition-colors ${
+                active === c
+                  ? "bg-primary text-primary-foreground"
+                  : "border border-border text-muted-foreground hover:border-primary hover:text-primary"
+              }`}
+            >
+              {c}
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 gap-4 pb-16 md:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((item) => (
+            <article key={item.title} className="group">
+              <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div className="mt-4 flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="font-display text-lg text-primary">{item.title}</h3>
+                  <p className="mt-1 text-xs text-muted-foreground">{item.loc}</p>
+                </div>
+                <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-accent">
+                  {item.cat}
+                </span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-studio pb-20">
+        <div className="border-t border-border py-12 text-center">
+          <p className="font-display text-2xl text-primary md:text-3xl">
+            Have a similar project in mind?
+          </p>
+          <Link
+            to="/contact"
+            className="mt-6 inline-flex items-center gap-2 bg-primary px-7 py-4 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+          >
+            Get a Quote
+          </Link>
+        </div>
+      </section>
+
+      <SiteFooter />
+    </div>
+  );
+}
