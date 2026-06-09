@@ -1,3 +1,4 @@
+import logo from "../assets/logo.png";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -18,7 +19,7 @@ export function SiteHeader() {
       <div className="container-studio flex h-16 items-center justify-between md:h-20">
         <Link to="/" className="flex items-center group" onClick={() => setOpen(false)}>
           <img 
-            src="/src/assets/logo.png" 
+            src={logo} 
             alt="AltSky Design" 
             className="h-18 md:h-20 w-auto"
           />
