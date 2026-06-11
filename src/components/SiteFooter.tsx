@@ -32,9 +32,9 @@ export function SiteFooter() {
           <div className="md:col-span-4">
             <p className="eyebrow text-primary-foreground/50">Contact</p>
             <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
-              <li>hello@altskydesign.com</li>
-              <li>Texas — On-site & remote</li>
-              <li>Washington State — Remote only</li>
+              <li>altsky.design</li>
+              <li>Texas - On-site & remote</li>
+              <li>Washington State - Remote only</li>
             </ul>
             <Link
               to="/contact"
