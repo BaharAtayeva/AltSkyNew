@@ -156,16 +156,13 @@ function ContactPage() {
                   {errors.message && <p className="mt-2 text-xs text-destructive">{errors.message}</p>}
                 </div>
                 <div className="md:col-span-2">
-                  <label className="flex cursor-pointer items-center gap-3 border border-dashed border-border px-5 py-4 text-sm text-muted-foreground hover:border-primary hover:text-primary">
-                    <Upload className="h-4 w-4" />
-                    <span>{fileName ?? "Share a link to your files (Google Drive, WeTransfer, Dropbox — optional)"}</span>
-                    <input
-                      type="text"
-                      placeholder="https://drive.google.com/..."
-                      className="sr-only"
-                      onChange={(e) => setFileName(e.target.files?.[0]?.name ?? null)}
-                    />
-                  </label>
+                  <label className="eyebrow block">File link (optional)</label>
+                  <input
+                    name="fileLink"
+                    type="text"
+                    placeholder="https://drive.google.com/... or WeTransfer, Dropbox"
+                    className="mt-3 w-full border-0 border-b border-border bg-transparent py-3 text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none focus:ring-0"
+                  />
                 </div>
                 <div className="md:col-span-2">
                   <button
