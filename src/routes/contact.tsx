@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
+import emailjs from "@emailjs/browser";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Mail, MapPin, Clock, Upload, Check } from "lucide-react";
@@ -10,8 +11,6 @@ export const Route = createFileRoute("/contact")({
     meta: [
       { title: "Contact — Start a Project | AltSky Design" },
       { name: "description", content: "Send your project to AltSky Design. CAD, BIM and 3D rendering quotes within 24 hours. Texas & Washington State." },
-      { property: "og:title", content: "Contact — AltSky Design" },
-      { property: "og:description", content: "Request a quote or send your project files. Quotes within 24 hours." },
     ],
   }),
   component: ContactPage,
@@ -41,9 +40,10 @@ const ContactSchema = z.object({
 function ContactPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const [fileName, setFileName] = useState<string | null>(null);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const data = {
@@ -64,32 +64,41 @@ function ContactPage() {
       return;
     }
     setErrors({});
-    setSent(true);
+    setSending(true);
+    try {
+      await emailjs.send(
+        "service_2k8ug1d",
+        "template_9jfsm9s",
+        data,
+        "p3fRgfJ2hpdOjdv4y"
+      );
+      setSent(true);
+    } catch (err) {
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
-
       <section className="container-studio pt-16 pb-12 md:pt-24 md:pb-16">
         <p className="eyebrow">Contact</p>
         <h1 className="mt-5 max-w-4xl font-display text-5xl leading-[1.05] text-balance text-primary md:text-7xl">
           Tell us about<br />the <em className="font-light italic text-accent">project.</em>
         </h1>
         <p className="mt-7 max-w-2xl text-muted-foreground md:text-lg">
-          Send files, sketches or just a brief — we'll review and reply with a
-          fixed quote and timeline within 24 hours.
+          Send files, sketches or just a brief — we'll review and reply with a fixed quote and timeline within 24 hours.
         </p>
       </section>
-
       <section className="container-studio pb-24">
         <div className="grid gap-12 border-t border-border pt-12 md:grid-cols-12 md:gap-16">
-          {/* Sidebar */}
           <aside className="space-y-10 md:col-span-4">
             <div>
               <Mail className="h-5 w-5 text-accent" strokeWidth={1.5} />
               <p className="mt-3 eyebrow">Email</p>
-              <p className="mt-2 text-foreground">hello@altskydesign.com</p>
+              <p className="mt-2 text-foreground">Projects@altsky.design</p>
             </div>
             <div>
               <MapPin className="h-5 w-5 text-accent" strokeWidth={1.5} />
@@ -107,8 +116,6 @@ function ContactPage() {
               <p className="mt-2 text-sm text-muted-foreground">Mon–Fri, 8am–6pm CT</p>
             </div>
           </aside>
-
-          {/* Form */}
           <div className="md:col-span-8">
             {sent ? (
               <div className="border border-border bg-secondary/50 p-10 text-center md:p-16">
@@ -151,9 +158,10 @@ function ContactPage() {
                 <div className="md:col-span-2">
                   <label className="flex cursor-pointer items-center gap-3 border border-dashed border-border px-5 py-4 text-sm text-muted-foreground hover:border-primary hover:text-primary">
                     <Upload className="h-4 w-4" />
-                    <span>{fileName ?? "Attach a file (PDF, DWG, JPG, ZIP — optional)"}</span>
+                    <span>{fileName ?? "Share a link to your files (Google Drive, WeTransfer, Dropbox — optional)"}</span>
                     <input
-                      type="file"
+                      type="text"
+                      placeholder="https://drive.google.com/..."
                       className="sr-only"
                       onChange={(e) => setFileName(e.target.files?.[0]?.name ?? null)}
                     />
@@ -162,9 +170,10 @@ function ContactPage() {
                 <div className="md:col-span-2">
                   <button
                     type="submit"
-                    className="w-full bg-primary px-8 py-5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 md:w-auto"
+                    disabled={sending}
+                    className="w-full bg-primary px-8 py-5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-50 md:w-auto"
                   >
-                    Send project
+                    {sending ? "Sending…" : "Send project"}
                   </button>
                 </div>
               </form>
@@ -172,7 +181,6 @@ function ContactPage() {
           </div>
         </div>
       </section>
-
       <SiteFooter />
     </div>
   );
