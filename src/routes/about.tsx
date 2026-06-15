@@ -40,7 +40,7 @@ function AboutPage() {
             </Reveal>
             <Reveal delay={120}>
               <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                Alternative Sky Design LLC is a Texas-based architectural support
+                Alternative Sky Design LLC is a Texas-based design support
                 studio founded on a simple idea: the people drafting your plans
                 and rendering your buildings should care about the work as much
                 as you do.
