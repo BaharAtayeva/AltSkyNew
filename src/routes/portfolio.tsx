@@ -25,6 +25,11 @@ import pPort15 from "@/assets/port15.jpg";
 import pAbout from "@/assets/about-studio.jpg";
 import pPort16 from "@/assets/port16.jpg";
 import pPort17 from "@/assets/port17.jpg";
+import pPort9 from "@/assets/port9.jpg";
+import pPort14 from "@/assets/port14.jpg";
+import pPort11 from "@/assets/port11.jpg";
+import pPort22 from "@/assets/port22.jpg";
+
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -43,17 +48,22 @@ type Cat = "All" | "Residential" | "Commercial" | "Interior Design" | "Masterpla
 
 const ITEMS: { src: string; title: string; cat: Exclude<Cat, "All">; loc: string }[] = [
   { src: pPort23, title: "Lakeside Modern Residence", cat: "Residential", loc: "Austin, TX" },
+  { src: pPort22, title: "Hillside Residence", cat: "Residential", loc: "Austin, TX" },
   { src: pResidential2, title: "Open-Plan Living Visualization", cat: "Interior Design", loc: "Houston, TX" },
   { src: pMaster1, title: "Corporate Office Block", cat: "Commercial", loc: "Dallas, TX" },
   { src: pCad1, title: "Bedroom & Study Nook Design", cat: "Commercial", loc: "Austin, TX" },
+  { src: pInterior3, title: "Coastal Restaurant Terrace Design ", cat: "Commercial", loc: "Austin, TX" },
   { src: pPort15, title: "Wood & Marble Kitchen", cat: "Interior Design", loc: "San Antonio, TX" },
+  { src: pPort11, title: "Spa Bathroom Design", cat: "Interior Design", loc: "San Antonio, TX" },
   // { src: pBim1, title: "Multi-Story BIM Model", cat: "CAD/BIM", loc: "Tacoma, WA" },
   { src: pCommercial1, title: "Stone & Cedar Family Home", cat: "Residential", loc: "Fort Worth, TX" },
   { src: pPort17, title: "Timber & Steel Forest Retreat", cat: "Residential", loc: "Austin, TX" },
   { src: pPort16, title: "Quiet Master Bedroom Render", cat: "3D Rendering", loc: "Austin, TX" },
   { src: pPort6, title: "Hospitality Interior Render", cat: "Commercial", loc: "Houston, TX" },
   { src: pAbout, title: "Suburban Masterplan Study", cat: "Masterplans", loc: "Bellevue, WA" },
-  { src: pCad2, title: "Stone Wall Staircase Interior", cat: "Interior Design", loc: "Plano, TX" },
+  { src: pPort9, title: "Modern Garden Pavilion Layout", cat: "Masterplans", loc: "Houston, TX" },
+  { src: pPort14, title: "Forest Cabin Site Visualization", cat: "Masterplans", loc: "Austin, TX" },
+  { src: pCommercial2, title: "Stone Wall Staircase Interior", cat: "Interior Design", loc: "Plano, TX" },
   // Permit Drawings — Seattle Residential Addition
   { src: pPermitCover, title: "Seattle Residential Addition - Cover", cat: "CAD/BIM", loc: "Seattle, WA" },
   { src: pPermitSiteplan, title: "Seattle Residential Addition - Site Plan", cat: "CAD/BIM", loc: "Seattle, WA" },

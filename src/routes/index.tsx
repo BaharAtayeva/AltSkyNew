@@ -127,7 +127,7 @@ function HomePage() {
                     <p className="text-[10px] font-medium uppercase tracking-[0.22em] opacity-80">
                       Featured render
                     </p>
-                    <p className="mt-1 font-display text-lg">Hill Country Residence · TX</p>
+                    <p className="mt-1 font-display text-lg">Pergola Lounge Outdoor Living · TX</p>
                   </div>
                   <span className="text-xs opacity-80">Exterior · 3D</span>
                 </div>
