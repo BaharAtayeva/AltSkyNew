@@ -8,7 +8,7 @@ export const Route = createFileRoute("/process")({
     meta: [
       { title: "Process — How AltSky Design Delivers Projects" },
       { name: "description", content: "Our 5-step workflow: project intake, scope & quote, drafting & modeling, rendering & revisions, final delivery. Predictable. Precise." },
-      { property: "og:title", content: "Process — AltSky Design" },
+      { property: "og:title", content: "Process - AltSky Design" },
       { property: "og:description", content: "A clear five-step workflow from intake to final delivery." },
     ],
   }),
@@ -27,17 +27,17 @@ const STEPS = [
   {
     n: "02",
     title: "Scope review & quote",
-    short: "Fixed price. Clear timeline.",
+    short: "Scope-based pricing. Clear timeline.",
     desc:
-      "We review what's needed, confirm deliverables and return a fixed quote with milestones — typically within 24 hours of intake.",
-    out: "Fixed-fee quote, milestone schedule, signed agreement.",
+      "We review what's needed, confirm deliverables and return a scope-based quote with milestones - typically within 24 hours of intake.",
+    out: "Scope-based quote, milestone schedule, signed agreement.",
   },
   {
     n: "03",
     title: "Drafting & modeling",
     short: "The studio gets to work.",
     desc:
-      "Senior drafters and modelers produce your CAD set, BIM model or 3D geometry to your standards — layered, organized and reviewable at any stage.",
+      "Senior drafters and modelers produce your CAD set, BIM model or 3D geometry to your standards - layered, organized and reviewable at any stage.",
     out: "CAD drawings, BIM model, 3D geometry, internal QA.",
   },
   {
@@ -53,7 +53,7 @@ const STEPS = [
     title: "Final delivery",
     short: "Everything, organized.",
     desc:
-      "Native files, PDFs, image exports and a clean folder structure — packaged and handed over so the next person on the project can pick it up immediately.",
+      "Native files, PDFs, image exports and a clean folder structure - packaged and handed over so the next person on the project can pick it up immediately.",
     out: "DWG / RVT / images / PDFs / project archive.",
   },
 ];

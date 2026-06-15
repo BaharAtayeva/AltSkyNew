@@ -89,7 +89,7 @@ function ContactPage() {
           Tell us about<br />the <em className="font-light italic text-accent">project.</em>
         </h1>
         <p className="mt-7 max-w-2xl text-muted-foreground md:text-lg">
-          Send files, sketches or just a brief — we'll review and reply with a fixed quote and timeline within 24 hours.
+          Send files, sketches or just a brief - we'll review and reply with a fixed quote and timeline within 24 hours.
         </p>
       </section>
       <section className="container-studio pb-24">
@@ -103,8 +103,8 @@ function ContactPage() {
             <div>
               <MapPin className="h-5 w-5 text-accent" strokeWidth={1.5} />
               <p className="mt-3 eyebrow">Service area</p>
-              <p className="mt-2 text-foreground">Texas — On-site & remote</p>
-              <p className="text-foreground">Washington State — Remote only</p>
+              <p className="mt-2 text-foreground">Texas - On-site & remote</p>
+              <p className="text-foreground">Washington State - Remote only</p>
             </div>
             <div>
               <Clock className="h-5 w-5 text-accent" strokeWidth={1.5} />

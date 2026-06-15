@@ -18,13 +18,13 @@ import pMaster1 from "@/assets/portfolio-masterplan-1.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AltSky Design — CAD, BIM & 3D Visualization Studio in Texas" },
+      { title: "AltSky Design - CAD, BIM & 3D Visualization Studio in Texas" },
       {
         name: "description",
         content:
           "Alternative Sky Design LLC turns sketches, PDFs and on-site measurements into precise CAD drawings, BIM models and photoreal renderings. Texas-based, serving local and remote projects.",
       },
-      { property: "og:title", content: "AltSky Design — Architectural Drafting & 3D Visualization" },
+      { property: "og:title", content: "AltSky Design - Architectural Drafting & 3D Visualization" },
       { property: "og:description", content: "CAD, BIM and 3D rendering services for homeowners, builders, developers and architects." },
       { property: "og:image", content: heroImg },
       { name: "twitter:card", content: "summary_large_image" },
@@ -38,7 +38,7 @@ const SERVICES = [
   { icon: Pencil, title: "2D & 3D CAD Drawings", desc: "Production-ready plans, elevations and details drafted to your standards." },
   { icon: Layers, title: "BIM Modeling", desc: "Coordinated Revit models that keep documentation, geometry and data in sync." },
   { icon: FileText, title: "PDF to CAD Conversion", desc: "Clean, editable CAD files redrawn from PDFs, scans or hand sketches." },
-  { icon: Box, title: "2D to 3D Modeling", desc: "Accurate 3D geometry built from your 2D drawings — ready for visualization." },
+  { icon: Box, title: "2D to 3D Modeling", desc: "Accurate 3D geometry built from your 2D drawings - ready for visualization." },
   { icon: Sparkles, title: "3D Rendering", desc: "Photoreal interior and exterior visuals that help projects sell themselves." },
   { icon: Ruler, title: "On-Site Measurement", desc: "As-built documentation captured on location across Texas." },
 ];
@@ -54,7 +54,7 @@ const STEPS = [
   { n: "02", title: "Scope & quote", desc: "We review deliverables and return a fixed quote and timeline within 24 hrs." },
   { n: "03", title: "Drafting & modeling", desc: "Your CAD drawings or BIM model are produced by our senior team." },
   { n: "04", title: "Rendering & revisions", desc: "Visuals refined collaboratively until every detail is right." },
-  { n: "05", title: "Final delivery", desc: "Native files, PDFs and image assets — organized and ready to use." },
+  { n: "05", title: "Final delivery", desc: "Native files, PDFs and image assets - organized and ready to use." },
 ];
 
 function HomePage() {
@@ -75,7 +75,7 @@ function HomePage() {
                 <br />
                 models, and
                 <br />
-                <em className="font-light italic text-accent">renderings</em> —
+                <em className="font-light italic text-accent">renderings</em> -
                 <br />
                 drawn precisely.
               </h1>
@@ -163,7 +163,7 @@ function HomePage() {
               Services built<br />for builders.
             </h2>
             <p className="mt-5 max-w-sm text-muted-foreground">
-              Six core capabilities, one studio. Choose any combination — we
+              Six core capabilities, one studio. Choose any combination - we
               scale to fit the deliverable you actually need.
             </p>
             <Link
@@ -250,7 +250,7 @@ function HomePage() {
               Start a project
             </p>
             <h2 className="mt-5 font-display text-4xl text-balance md:text-6xl">
-              Send us a sketch, a PDF, or a site —<br />
+              Send us a sketch, a PDF, or a site -<br />
               <span className="italic text-accent">we'll handle the rest.</span>
             </h2>
           </div>

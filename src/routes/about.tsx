@@ -8,9 +8,9 @@ import studio from "@/assets/about-studio.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Alternative Sky Design LLC | AltSky Design" },
+      { title: "About - Alternative Sky Design LLC | AltSky Design" },
       { name: "description", content: "AltSky Design is a Texas-based architectural support studio specializing in accurate CAD, BIM and 3D visualization for builders, developers and architects." },
-      { property: "og:title", content: "About — AltSky Design" },
+      { property: "og:title", content: "About - AltSky Design" },
       { property: "og:description", content: "Accuracy, reliability and clean drafting from a Texas-based studio." },
       { property: "og:image", content: studio },
     ],
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/about")({
 const VALUES = [
   { t: "Accuracy", d: "Every line is intentional. We draft to standard, double-check dimensions, and version everything." },
   { t: "Reliability", d: "Quotes you can trust, deadlines we hold, and predictable communication throughout the project." },
-  { t: "Clean work", d: "Layered, named and organized files — handed off ready for the next person to use them." },
+  { t: "Clean work", d: "Layered, named and organized files - handed off ready for the next person to use them." },
 ];
 
 function AboutPage() {
@@ -47,7 +47,7 @@ function AboutPage() {
               </p>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
                 We partner with homeowners, builders, contractors, real estate
-                developers, and design firms — handling the parts of a project
+                developers, and design firms - handling the parts of a project
                 that need precision, patience and a steady hand on the mouse.
               </p>
             </Reveal>
@@ -93,7 +93,7 @@ function AboutPage() {
       <section className="container-studio py-16 md:py-24">
         <div className="grid gap-10 md:grid-cols-2">
           <div className="bg-secondary/50 p-10 md:p-14">
-            <p className="eyebrow">Texas — Primary</p>
+            <p className="eyebrow">Texas - Primary</p>
             <h3 className="mt-4 font-display text-3xl text-primary md:text-4xl">Local & on-site</h3>
             <p className="mt-4 text-muted-foreground">
               Texas is home base. We provide on-site measurement, as-built
@@ -108,11 +108,11 @@ function AboutPage() {
             </ul>
           </div>
           <div className="border border-border p-10 md:p-14">
-            <p className="eyebrow">Washington State — Remote</p>
+            <p className="eyebrow">Washington State - Remote</p>
             <h3 className="mt-4 font-display text-3xl text-primary md:text-4xl">Remote & seamless</h3>
             <p className="mt-4 text-muted-foreground">
-              For Washington projects we deliver every service remotely —
-              drafting, modeling and visualization — with the same standards
+              For Washington projects we deliver every service remotely -
+              drafting, modeling and visualization - with the same standards
               and turnaround.
             </p>
             <ul className="mt-6 space-y-2 text-sm text-foreground">

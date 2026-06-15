@@ -48,12 +48,12 @@ const ITEMS: { src: string; title: string; cat: Exclude<Cat, "All">; loc: string
   { src: pMaster1, title: "Suburban Masterplan Study", cat: "Masterplans", loc: "Bellevue, WA" },
   { src: pCad2, title: "Building Section Drawing", cat: "CAD/BIM", loc: "Plano, TX" },
   // Permit Drawings — Seattle Residential Addition
-  { src: pPermitCover, title: "Seattle Residential Addition — Cover", cat: "Permit Drawings", loc: "Seattle, WA" },
-  { src: pPermitSiteplan, title: "Seattle Residential Addition — Site Plan", cat: "Permit Drawings", loc: "Seattle, WA" },
-  { src: pPermitLevel1, title: "Seattle Residential Addition — Proposed Level 1", cat: "Permit Drawings", loc: "Seattle, WA" },
-  { src: pPermitLevel2, title: "Seattle Residential Addition — Proposed Level 2", cat: "Permit Drawings", loc: "Seattle, WA" },
-  { src: pPermitElevEW, title: "Seattle Residential Addition — East/West Elevations", cat: "Permit Drawings", loc: "Seattle, WA" },
-  { src: pPermitElevNS, title: "Seattle Residential Addition — North/South Elevations", cat: "Permit Drawings", loc: "Seattle, WA" },
+  { src: pPermitCover, title: "Seattle Residential Addition - Cover", cat: "Permit Drawings", loc: "Seattle, WA" },
+  { src: pPermitSiteplan, title: "Seattle Residential Addition - Site Plan", cat: "Permit Drawings", loc: "Seattle, WA" },
+  { src: pPermitLevel1, title: "Seattle Residential Addition - Proposed Level 1", cat: "Permit Drawings", loc: "Seattle, WA" },
+  { src: pPermitLevel2, title: "Seattle Residential Addition - Proposed Level 2", cat: "Permit Drawings", loc: "Seattle, WA" },
+  { src: pPermitElevEW, title: "Seattle Residential Addition - East/West Elevations", cat: "Permit Drawings", loc: "Seattle, WA" },
+  { src: pPermitElevNS, title: "Seattle Residential Addition - North/South Elevations", cat: "Permit Drawings", loc: "Seattle, WA" },
 ];
 
 const CATS: Cat[] = ["All", "Residential", "Commercial", "Interior Design", "Masterplans", "CAD/BIM", "3D Rendering", "Permit Drawings"];

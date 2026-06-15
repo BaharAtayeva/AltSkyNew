@@ -13,7 +13,7 @@ export function SiteFooter() {
               </span>
             </div>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-primary-foreground/70">
-              Alternative Sky Design LLC — a CAD, BIM and 3D visualization studio
+              Alternative Sky Design LLC - a CAD, BIM and 3D visualization studio
               turning sketches, PDFs and site measurements into precise, production-ready
               drawings and renderings.
             </p>
