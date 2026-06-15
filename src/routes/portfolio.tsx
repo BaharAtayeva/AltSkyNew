@@ -5,8 +5,8 @@ import { SiteFooter } from "@/components/SiteFooter";
 import pInterior1 from "@/assets/portfolio-interior-1.jpg";
 import pInterior2 from "@/assets/portfolio-interior-2.jpg";
 import pInterior3 from "@/assets/portfolio-interior-3.jpg";
-import pResidential1 from "@/assets/portfolio-residential-1.jpg";
-import pResidential2 from "@/assets/portfolio-residential-2.jpg";
+import pResidential1 from "@/assets/portfolio-residential-1.jpg"; //su interior
+import pResidential2 from "@/assets/portfolio-residential-2.jpg"; // su interior
 import pCommercial1 from "@/assets/portfolio-commercial-1.jpg";
 import pCommercial2 from "@/assets/portfolio-commercial-2.jpg";
 import pCad1 from "@/assets/portfolio-cad-1.jpg";
@@ -19,13 +19,19 @@ import pPermitLevel1 from "@/assets/portfolio-permit-level1.jpg";
 import pPermitLevel2 from "@/assets/portfolio-permit-level2.jpg";
 import pPermitElevEW from "@/assets/portfolio-permit-elevation-ew.jpg";
 import pPermitElevNS from "@/assets/portfolio-permit-elevation-ns.jpg";
+import pPort23 from "@/assets/port23.jpg";
+import pPort6 from "@/assets/port6.jpg";
+import pPort15 from "@/assets/port15.jpg";
+import pAbout from "@/assets/about-studio.jpg";
+import pPort16 from "@/assets/port16.jpg";
+import pPort17 from "@/assets/port17.jpg";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Architectural CAD, BIM & 3D Renderings | AltSky Design" },
+      { title: "Portfolio - Architectural CAD, BIM & 3D Renderings | AltSky Design" },
       { name: "description", content: "Selected residential, commercial, interior, masterplan, CAD/BIM and 3D rendering work by AltSky Design." },
-      { property: "og:title", content: "Portfolio — AltSky Design" },
+      { property: "og:title", content: "Portfolio - AltSky Design" },
       { property: "og:description", content: "Selected projects across residential, commercial, interior, masterplan, CAD/BIM and 3D rendering." },
       { property: "og:image", content: pResidential1 },
     ],
@@ -33,30 +39,31 @@ export const Route = createFileRoute("/portfolio")({
   component: PortfolioPage,
 });
 
-type Cat = "All" | "Residential" | "Commercial" | "Interior Design" | "Masterplans" | "CAD/BIM" | "3D Rendering" | "Permit Drawings";
+type Cat = "All" | "Residential" | "Commercial" | "Interior Design" | "Masterplans" | "CAD/BIM" | "3D Rendering"; //  | "Permit Drawings"
 
 const ITEMS: { src: string; title: string; cat: Exclude<Cat, "All">; loc: string }[] = [
-  { src: pResidential1, title: "Lakeside Modern Residence", cat: "Residential", loc: "Austin, TX" },
-  { src: pInterior1, title: "Open-Plan Living Visualization", cat: "Interior Design", loc: "Houston, TX" },
-  { src: pCommercial1, title: "Corporate Office Block", cat: "Commercial", loc: "Dallas, TX" },
-  { src: pCad1, title: "Residential Floor Plan Set", cat: "CAD/BIM", loc: "Seattle, WA" },
-  { src: pInterior2, title: "Wood & Marble Kitchen", cat: "Interior Design", loc: "San Antonio, TX" },
-  { src: pBim1, title: "Multi-Story BIM Model", cat: "CAD/BIM", loc: "Tacoma, WA" },
-  { src: pResidential2, title: "Stone & Cedar Family Home", cat: "Residential", loc: "Fort Worth, TX" },
-  { src: pInterior3, title: "Quiet Master Bedroom Render", cat: "3D Rendering", loc: "Austin, TX" },
-  { src: pCommercial2, title: "Hospitality Interior Render", cat: "Commercial", loc: "Houston, TX" },
-  { src: pMaster1, title: "Suburban Masterplan Study", cat: "Masterplans", loc: "Bellevue, WA" },
-  { src: pCad2, title: "Building Section Drawing", cat: "CAD/BIM", loc: "Plano, TX" },
+  { src: pPort23, title: "Lakeside Modern Residence", cat: "Residential", loc: "Austin, TX" },
+  { src: pResidential2, title: "Open-Plan Living Visualization", cat: "Interior Design", loc: "Houston, TX" },
+  { src: pMaster1, title: "Corporate Office Block", cat: "Commercial", loc: "Dallas, TX" },
+  { src: pCad1, title: "Bedroom & Study Nook Design", cat: "Commercial", loc: "Austin, TX" },
+  { src: pPort15, title: "Wood & Marble Kitchen", cat: "Interior Design", loc: "San Antonio, TX" },
+  // { src: pBim1, title: "Multi-Story BIM Model", cat: "CAD/BIM", loc: "Tacoma, WA" },
+  { src: pCommercial1, title: "Stone & Cedar Family Home", cat: "Residential", loc: "Fort Worth, TX" },
+  { src: pPort17, title: "Timber & Steel Forest Retreat", cat: "Residential", loc: "Austin, TX" },
+  { src: pPort16, title: "Quiet Master Bedroom Render", cat: "3D Rendering", loc: "Austin, TX" },
+  { src: pPort6, title: "Hospitality Interior Render", cat: "Commercial", loc: "Houston, TX" },
+  { src: pAbout, title: "Suburban Masterplan Study", cat: "Masterplans", loc: "Bellevue, WA" },
+  { src: pCad2, title: "Stone Wall Staircase Interior", cat: "Interior Design", loc: "Plano, TX" },
   // Permit Drawings — Seattle Residential Addition
-  { src: pPermitCover, title: "Seattle Residential Addition - Cover", cat: "Permit Drawings", loc: "Seattle, WA" },
-  { src: pPermitSiteplan, title: "Seattle Residential Addition - Site Plan", cat: "Permit Drawings", loc: "Seattle, WA" },
-  { src: pPermitLevel1, title: "Seattle Residential Addition - Proposed Level 1", cat: "Permit Drawings", loc: "Seattle, WA" },
-  { src: pPermitLevel2, title: "Seattle Residential Addition - Proposed Level 2", cat: "Permit Drawings", loc: "Seattle, WA" },
-  { src: pPermitElevEW, title: "Seattle Residential Addition - East/West Elevations", cat: "Permit Drawings", loc: "Seattle, WA" },
-  { src: pPermitElevNS, title: "Seattle Residential Addition - North/South Elevations", cat: "Permit Drawings", loc: "Seattle, WA" },
+  { src: pPermitCover, title: "Seattle Residential Addition - Cover", cat: "CAD/BIM", loc: "Seattle, WA" },
+  { src: pPermitSiteplan, title: "Seattle Residential Addition - Site Plan", cat: "CAD/BIM", loc: "Seattle, WA" },
+  { src: pPermitLevel1, title: "Seattle Residential Addition - Proposed Level 1", cat: "CAD/BIM", loc: "Seattle, WA" },
+  { src: pPermitLevel2, title: "Seattle Residential Addition - Proposed Level 2", cat: "CAD/BIM", loc: "Seattle, WA" },
+  { src: pPermitElevEW, title: "Seattle Residential Addition - East/West Elevations", cat: "CAD/BIM", loc: "Seattle, WA" },
+  { src: pPermitElevNS, title: "Seattle Residential Addition - North/South Elevations", cat: "CAD/BIM", loc: "Seattle, WA" },
 ];
 
-const CATS: Cat[] = ["All", "Residential", "Commercial", "Interior Design", "Masterplans", "CAD/BIM", "3D Rendering", "Permit Drawings"];
+const CATS: Cat[] = ["All", "Residential", "Commercial", "Interior Design", "Masterplans", "CAD/BIM", "3D Rendering",];
 
 function PortfolioPage() {
   const [active, setActive] = useState<Cat>("All");
