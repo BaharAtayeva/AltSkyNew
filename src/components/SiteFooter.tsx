@@ -13,7 +13,7 @@ export function SiteFooter() {
               </span>
             </div>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-primary-foreground/70">
-              Alternative Sky Design LLC — a CAD, BIM and 3D visualization studio
+              Alternative Sky Design LLC - a CAD, BIM and 3D visualization studio
               turning sketches, PDFs and site measurements into precise, production-ready
               drawings and renderings.
             </p>
@@ -33,8 +33,8 @@ export function SiteFooter() {
             <p className="eyebrow text-primary-foreground/50">Contact</p>
             <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
               <li>hello@altskydesign.com</li>
-              <li>Texas — On-site & remote</li>
-              <li>Washington State — Remote only</li>
+              <li>Texas - On-site & remote</li>
+              <li>Washington State - Remote only</li>
             </ul>
             <Link
               to="/contact"
