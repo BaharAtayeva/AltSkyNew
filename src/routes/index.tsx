@@ -203,12 +203,12 @@ function HomePage() {
           <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
             {PORTFOLIO.map((src, i) => (
               <Reveal key={i} delay={i * 40}>
-                <div className={`overflow-hidden bg-background ${i % 5 === 0 ? "aspect-[3/4]" : "aspect-square"}`}>
+                <div className={"overflow-hidden bg-background aspect-square"}>
                   <img
                     src={src}
                     alt={`Project ${i + 1}`}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                    className="h-full w-full object-contain transition-transform duration-700 hover:scale-105"
                   />
                 </div>
               </Reveal>
