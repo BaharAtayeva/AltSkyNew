@@ -23,12 +23,15 @@ import pPort23 from "@/assets/port23.jpg";
 import pPort6 from "@/assets/port6.jpg";
 import pPort15 from "@/assets/port15.jpg";
 import pAbout from "@/assets/about-studio.jpg";
-import pPort16 from "@/assets/port16.jpg";
+// import pPort16 from "@/assets/port16.jpg";
 import pPort17 from "@/assets/port17.jpg";
 import pPort9 from "@/assets/port9.jpg";
 import pPort14 from "@/assets/port14.jpg";
 import pPort11 from "@/assets/port11.jpg";
 import pPort22 from "@/assets/port22.jpg";
+import pPort25 from "@/assets/port25.png";
+import pPort24 from "@/assets/port24.png";
+
 
 
 export const Route = createFileRoute("/portfolio")({
@@ -58,7 +61,10 @@ const ITEMS: { src: string; title: string; cat: Exclude<Cat, "All">; loc: string
   // { src: pBim1, title: "Multi-Story BIM Model", cat: "CAD/BIM", loc: "Tacoma, WA" },
   { src: pCommercial1, title: "Stone & Cedar Family Home", cat: "Residential", loc: "Fort Worth, TX" },
   { src: pPort17, title: "Timber & Steel Forest Retreat", cat: "Residential", loc: "Austin, TX" },
-  { src: pPort16, title: "Quiet Master Bedroom Render", cat: "3D Rendering", loc: "Austin, TX" },
+  // { src: pPort16, title: "Quiet Master Bedroom Render", cat: "3D Rendering", loc: "Austin, TX" },
+  
+  { src: pPort25, title: "Wood Cabin Visualization Workflow", cat: "3D Rendering", loc: "Austin, TX" },
+  { src: pPort24, title: "Brick & Timber Villa Render", cat: "3D Rendering", loc: "Houston, TX" },
   { src: pPort6, title: "Hospitality Interior Render", cat: "Commercial", loc: "Houston, TX" },
   { src: pAbout, title: "Suburban Masterplan Study", cat: "Masterplans", loc: "Bellevue, WA" },
   { src: pPort9, title: "Modern Garden Pavilion Layout", cat: "Masterplans", loc: "Houston, TX" },
