@@ -50,12 +50,12 @@ export const Route = createFileRoute("/portfolio")({
 type Cat = "All" | "Residential" | "Commercial" | "Interior Design" | "Masterplans" | "CAD/BIM" | "3D Rendering"; //  | "Permit Drawings"
 
 const ITEMS: { src: string; title: string; cat: Exclude<Cat, "All">; loc: string }[] = [
-  { src: pPort23, title: "Lakeside Modern Residence", cat: "Residential", loc: "Austin, TX" },
+  { src: pPort23, title: "Lakeside Modern Residence", cat: "Residential", loc: "Galveston, TX" },
   { src: pPort22, title: "Hillside Residence", cat: "Residential", loc: "Austin, TX" },
   { src: pResidential2, title: "Open-Plan Living Visualization", cat: "Interior Design", loc: "Houston, TX" },
   { src: pMaster1, title: "Corporate Office Block", cat: "Commercial", loc: "Dallas, TX" },
   { src: pCad1, title: "Bedroom & Study Nook Design", cat: "Commercial", loc: "Austin, TX" },
-  { src: pInterior3, title: "Coastal Restaurant Terrace Design ", cat: "Commercial", loc: "Austin, TX" },
+  { src: pInterior3, title: "Coastal Restaurant Terrace Design ", cat: "Commercial", loc: "Galveston, TX" },
   { src: pPort15, title: "Wood & Marble Kitchen", cat: "Interior Design", loc: "San Antonio, TX" },
   { src: pPort11, title: "Spa Bathroom Design", cat: "Interior Design", loc: "San Antonio, TX" },
   // { src: pBim1, title: "Multi-Story BIM Model", cat: "CAD/BIM", loc: "Tacoma, WA" },
