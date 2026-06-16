@@ -60,7 +60,7 @@ const ITEMS: { src: string; title: string; cat: Exclude<Cat, "All">; loc: string
   { src: pPort11, title: "Spa Bathroom Design", cat: "Interior Design", loc: "San Antonio, TX" },
   // { src: pBim1, title: "Multi-Story BIM Model", cat: "CAD/BIM", loc: "Tacoma, WA" },
   { src: pCommercial1, title: "Stone & Cedar Family Home", cat: "Residential", loc: "Fort Worth, TX" },
-  { src: pPort17, title: "Timber & Steel Forest Retreat", cat: "Residential", loc: "Austin, TX" },
+  { src: pPort17, title: "Steel Forest House", cat: "Residential", loc: "Houston, TX" },
   // { src: pPort16, title: "Quiet Master Bedroom Render", cat: "3D Rendering", loc: "Austin, TX" },
   
   { src: pPort25, title: "Wood Cabin Visualization Workflow", cat: "3D Rendering", loc: "Austin, TX" },
