@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, FileText, Box, Layers, Pencil, Sparkles, Ruler } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, FileText, Box, Layers, Pencil, Sparkles, Ruler, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
@@ -35,18 +36,25 @@ export const Route = createFileRoute("/")({
 });
 
 const SERVICES = [
-  { icon: Pencil, title: "2D & 3D CAD Drawings", desc: "Production-ready plans, elevations and details drafted to your standards." },
-  { icon: Layers, title: "BIM Modeling", desc: "Coordinated Revit models that keep documentation, geometry and data in sync." },
-  { icon: FileText, title: "PDF to CAD Conversion", desc: "Clean, editable CAD files redrawn from PDFs, scans or hand sketches." },
-  { icon: Box, title: "2D to 3D Modeling", desc: "Accurate 3D geometry built from your 2D drawings - ready for visualization." },
-  { icon: Sparkles, title: "3D Rendering", desc: "Photoreal interior and exterior visuals that help projects sell themselves." },
-  { icon: Ruler, title: "On-Site Measurement", desc: "As-built documentation captured on location across Texas." },
+  { icon: Pencil, title: "2D & 3D CAD Drawings", desc: "Production-ready plans, elevations and details drafted to your standards.", slug: "cad-drawings" },
+  { icon: Layers, title: "BIM Modeling", desc: "Coordinated Revit models that keep documentation, geometry and data in sync.", slug: "bim-modeling" },
+  { icon: FileText, title: "PDF to CAD Conversion", desc: "Clean, editable CAD files redrawn from PDFs, scans or hand sketches.", slug: "pdf-to-cad" },
+  { icon: Box, title: "2D to 3D Modeling", desc: "Accurate 3D geometry built from your 2D drawings - ready for visualization.", slug: "2d-to-3d" },
+  { icon: Sparkles, title: "3D Rendering", desc: "Photoreal interior and exterior visuals that help projects sell themselves.", slug: "3d-rendering" },
+  { icon: Ruler, title: "On-Site Measurement", desc: "As-built documentation captured on location across Texas.", slug: "on-site-measurement" },
 ];
 
 const PORTFOLIO = [
-  pResidential1, pInterior1, pCommercial1, pCad1,
-  pInterior2, pBim1, pResidential2, pInterior3,
-  pCommercial2, pMaster1,
+  { src: pResidential1, title: "Modern Residence", loc: "Austin, TX" },
+  { src: pInterior1, title: "Wall Staircase Interior", loc: "Houston, TX" },
+  { src: pCommercial1, title: "Stone & Cedar Family Home", loc: "Fort Worth, TX" },
+  { src: pCad1, title: "Bedroom & Study Nook Design", loc: "Austin, TX" },
+  { src: pInterior2, title: "Modern Residence", loc: "San Antonio, TX" },
+  { src: pBim1, title: "Family Home", loc: "Tacoma, WA" },
+  { src: pResidential2, title: "Open-Plan Living Visualization", loc: "Houston, TX" },
+  { src: pInterior3, title: "Coastal Restaurant Terrace Design", loc: "Galveston, TX" },
+  { src: pCommercial2, title: "Stone Wall Staircase Interior", loc: "Plano, TX" },
+  { src: pMaster1, title: "Corporate Office Block", loc: "Dallas, TX" },
 ];
 
 const STEPS = [
@@ -58,6 +66,7 @@ const STEPS = [
 ];
 
 function HomePage() {
+  const [lightbox, setLightbox] = useState<number | null>(null);
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -175,11 +184,16 @@ function HomePage() {
           </div>
           <div className="grid gap-px bg-border md:col-span-8 md:grid-cols-2">
             {SERVICES.map((s) => (
-              <div key={s.title} className="group bg-background p-8 transition-colors hover:bg-secondary/50">
+              <Link
+                key={s.title}
+                to="/service/$slug"
+                params={{ slug: s.slug }}
+                className="group bg-background p-8 transition-colors hover:bg-secondary/50"
+              >
                 <s.icon className="h-6 w-6 text-accent" strokeWidth={1.5} />
                 <h3 className="mt-6 font-display text-xl text-primary">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -201,12 +215,12 @@ function HomePage() {
           </div>
 
           <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-            {PORTFOLIO.map((src, i) => (
+            {PORTFOLIO.map((item, i) => (
               <Reveal key={i} delay={i * 40}>
-                <div className={"overflow-hidden bg-background aspect-square"}>
+                <div className="overflow-hidden bg-background aspect-square cursor-pointer" onClick={() => setLightbox(i)}>
                   <img
-                    src={src}
-                    alt={`Project ${i + 1}`}
+                    src={item.src}
+                    alt={item.title}
                     loading="lazy"
                     className="h-full w-full object-contain transition-transform duration-700 hover:scale-105"
                   />
@@ -265,6 +279,59 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {lightbox !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            className="absolute top-6 right-6 text-white hover:text-accent"
+            onClick={() => setLightbox(null)}
+          >
+            <X className="h-8 w-8" />
+          </button>
+
+          {lightbox > 0 && (
+            <button
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-accent md:left-8"
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightbox(lightbox - 1);
+              }}
+            >
+              <ChevronLeft className="h-10 w-10" />
+            </button>
+          )}
+
+          {lightbox < PORTFOLIO.length - 1 && (
+            <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-accent md:right-8"
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightbox(lightbox + 1);
+              }}
+            >
+              <ChevronRight className="h-10 w-10" />
+            </button>
+          )}
+
+          <div
+            className="flex max-h-[90vh] max-w-[90vw] flex-col items-center gap-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={PORTFOLIO[lightbox].src}
+              alt={PORTFOLIO[lightbox].title}
+              className="max-h-[75vh] max-w-[90vw] object-contain"
+            />
+            <div className="text-center text-white">
+              <p className="font-display text-3xl md:text-4xl">{PORTFOLIO[lightbox].title}</p>
+              <p className="mt-2 text-base md:text-lg text-white/70">{PORTFOLIO[lightbox].loc}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <SiteFooter />
     </div>
