@@ -15,6 +15,27 @@ import pCommercial2 from "@/assets/portfolio-commercial-2.jpg";
 import pCad1 from "@/assets/portfolio-cad-1.jpg";
 import pBim1 from "@/assets/portfolio-bim-1.jpg";
 import pMaster1 from "@/assets/portfolio-masterplan-1.jpg";
+import pPort7 from "@/assets/port7.jpg";
+import pPort20 from "@/assets/port20.jpg";
+import pPort2 from "@/assets/port2.jpg";
+import pPort3 from "@/assets/port3.jpg";
+import pPort8 from "@/assets/port8.jpg";
+// import pPort30 from "@/assets/port30.jpg";
+import pPort1 from "@/assets/port1.jpg";
+import pPort19 from "@/assets/port19.jpg";
+import pPort23 from "@/assets/port23.jpg";
+import pPort27 from "@/assets/port27.jpg";
+import pPort28 from "@/assets/port28.jpg";
+import pPort29 from "@/assets/port29.jpg";
+import pPort31 from "@/assets/port31.jpg";
+import pPort32 from "@/assets/port32.jpg";
+import pPort33 from "@/assets/port33.jpg";
+import pPort34 from "@/assets/port34.jpg";
+import pPort35 from "@/assets/port35.jpg";
+import pPort36 from "@/assets/port36.jpg";
+import pPort10 from "@/assets/port10.jpg";
+import pPort16 from "@/assets/port16.jpg";
+import pPort9 from "@/assets/port9.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,10 +72,35 @@ const PORTFOLIO = [
   { src: pCad1, title: "Bedroom & Study Nook Design", loc: "Austin, TX" },
   { src: pInterior2, title: "Modern Residence", loc: "San Antonio, TX" },
   { src: pBim1, title: "Family Home", loc: "Tacoma, WA" },
-  { src: pResidential2, title: "Open-Plan Living Visualization", loc: "Houston, TX" },
+  { src: pResidential2, title: "Hospitality Interior Render", loc: "Houston, TX" },
   { src: pInterior3, title: "Coastal Restaurant Terrace Design", loc: "Galveston, TX" },
   { src: pCommercial2, title: "Stone Wall Staircase Interior", loc: "Plano, TX" },
   { src: pMaster1, title: "Corporate Office Block", loc: "Dallas, TX" },
+  { src: pPort7, title: "Living Visualization", loc: "Dallas, TX" },
+  { src: pPort20, title: "Family Home", loc: "Tacoma, WA" },
+  { src: pPort2, title: "Open_Plan Living Visualization", loc: "Dallas, TX" },
+  { src: pPort3, title: "Open-Plan Living Visualization", loc: "Dallas, TX" },
+  { src: pPort8, title: "Elegant Privacy", loc: "Austen, TX" },
+  // { src: pPort30, title: "Elegant Privacy", loc: "Austen, TX" },
+  { src: pPort1, title: "Modern Resindence", loc: "Austen, TX" },
+  { src: pPort19, title: "Forest House", loc: "Houston, TX" },
+  { src: pPort23, title: "Lakeside Modern Residence", loc: "Galveston, TX" },
+  { src: pPort27, title: "Family Home", loc: "Austen, TX" },
+  { src: pPort28, title: "Bedroom Design", loc: "Houston, TX" },
+  { src: pPort29, title: "Hospitality Interior Render", loc: "Houston, TX" },
+  { src: pPort31, title: "Spa Bathroom Design", loc: "Austen, TX" },
+  { src: pPort32, title: "Family Home", loc: "San Antonio, TX" },
+  { src: pPort33, title: "Forest House", loc: "Houston, TX" },
+  { src: pPort34, title: "Forest House", loc: "Houston, TX" },
+  { src: pPort35, title: "Modern Resindence", loc: "Austen, TX" },
+  { src: pPort36, title: "Family Home", loc: "Austen, TX" },
+  { src: pPort10, title: "Elegant Privacy", loc: "Austen, TX" },
+  { src: pPort16, title: "Hospitality Interior Render", loc: "San Antonio, TX" },
+  { src: pPort9, title: "Modern Garden Pavilion Layout", loc: "Houston, TX" },
+  
+  
+  
+
 ];
 
 const STEPS = [
@@ -214,15 +260,15 @@ function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+          <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {PORTFOLIO.map((item, i) => (
               <Reveal key={i} delay={i * 40}>
-                <div className="overflow-hidden bg-background aspect-square cursor-pointer" onClick={() => setLightbox(i)}>
+                <div className="overflow-hidden bg-secondary" style={{ height: "260px" }} onClick={() => setLightbox(i)}>
                   <img
                     src={item.src}
                     alt={item.title}
                     loading="lazy"
-                    className="h-full w-full object-contain transition-transform duration-700 hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                   />
                 </div>
               </Reveal>
@@ -323,7 +369,7 @@ function HomePage() {
             <img
               src={PORTFOLIO[lightbox].src}
               alt={PORTFOLIO[lightbox].title}
-              className="max-h-[75vh] max-w-[90vw] object-contain"
+              className="max-h-[75vh] max-w-[90vw] object-cover" //su yer
             />
             <div className="text-center text-white">
               <p className="font-display text-3xl md:text-4xl">{PORTFOLIO[lightbox].title}</p>

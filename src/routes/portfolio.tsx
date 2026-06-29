@@ -120,7 +120,8 @@ function PortfolioPage() {
         <div className="mt-8 grid grid-cols-1 gap-4 pb-16 md:grid-cols-2 lg:grid-cols-3">
           {filtered.map((item) => (
             <article key={item.title} className="group">
-              <div className="aspect-[4/3] overflow-hidden bg-secondary">
+              
+              <div className="overflow-hidden bg-secondary" style={{ height: "260px" }}> 
                 <img
                   src={item.src}
                   alt={item.title}
