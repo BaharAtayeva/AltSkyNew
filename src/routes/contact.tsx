@@ -4,12 +4,12 @@ import { z } from "zod";
 import emailjs from "@emailjs/browser";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Mail, MapPin, Clock, Upload, Check } from "lucide-react";
+import { Mail, MapPin, Clock, Upload, Check, Phone } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Start a Project | AltSky Design" },
+      { title: "Contact - Start a Project | AltSky Design" },
       { name: "description", content: "Send your project to AltSky Design. CAD, BIM and 3D rendering quotes within 24 hours. Texas & Washington State." },
     ],
   }),
@@ -21,8 +21,8 @@ const PROJECT_TYPES = [
   "BIM Modeling",
   "PDF to CAD Conversion",
   "2D to 3D Modeling",
-  "3D Rendering — Interior",
-  "3D Rendering — Exterior",
+  "3D Rendering - Interior",
+  "3D Rendering - Exterior",
   "Architectural Visualization",
   "On-site Measurement (TX)",
   "Other",
@@ -107,14 +107,11 @@ function ContactPage() {
               <p className="text-foreground">Washington State - Remote only</p>
             </div>
             <div>
-              <Clock className="h-5 w-5 text-accent" strokeWidth={1.5} />
-              <p className="mt-3 eyebrow">Response time</p>
-              <p className="mt-2 text-foreground">Within 24 hours, business days.</p>
+              <Phone className="h-5 w-5 text-accent" strokeWidth={1.5} />
+              <p className="mt-3 eyebrow">Phone Call</p>
+              <p className="mt-2 text-foreground">+1 (832) 815-2943</p>
             </div>
-            <div className="border-t border-border pt-8">
-              <p className="eyebrow">Studio hours</p>
-              <p className="mt-2 text-sm text-muted-foreground">Mon–Fri, 8am–6pm CT</p>
-            </div>
+          
           </aside>
           <div className="md:col-span-8">
             {sent ? (
